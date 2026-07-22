@@ -1,7 +1,9 @@
 import Client from "../models/Client.js";
 
 export const getClients = async (req, res) => {
-  const clients = await Client.find();
+  const clients = (await Client.find().sort(
+    {ciudad:1} // 1. ascendente, -1 descendente
+  ));
   res.json(clients);
 };
 
