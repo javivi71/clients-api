@@ -45,6 +45,9 @@ export const login = async (req, res) => {
       token,
     });
 
+   console.log(jwt.decode(token));
+   
+
   } catch (error) {
     res.status(500).json({
       message: error.message,
