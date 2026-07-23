@@ -1,8 +1,8 @@
-// app.js
 import express from "express";
 import cors from "cors";
 import clientsRouter from "./routes/clientsRoutes.js";
 import { connectDB } from "./config/db.js";
+import usersRoutes from "./routes/usersRoutes.js"
 
 const app = express();
 const PORT = 3000;
@@ -21,6 +21,7 @@ try {
 
 // Rutas
 app.use("/clients", clientsRouter);
+app.use("/users", usersRoutes);
 
 // Ruta de prueba para verificar que el servidor funciona
 app.get("/health", (req, res) => {
